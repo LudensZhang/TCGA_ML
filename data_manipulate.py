@@ -9,5 +9,5 @@ raw_trans = pd.read_csv('./raw_data/transcriptome/mRNA-fpkm-540-56603.csv', inde
 trans_meta = raw_meta.dropna(subset = ['transcriptom_id'])
 
 trans_meta.to_csv('./COAD/metadata.csv')
-raw_micro.to_csv('./COAD/microbiome/microbial.csv')
+raw_micro.to_csv('./COAD/microbiome/microbiome.csv')
 raw_trans.to_csv('./COAD/transcriptome/trancriptome.csv')

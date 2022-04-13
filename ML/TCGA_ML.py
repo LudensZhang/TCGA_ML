@@ -38,12 +38,9 @@ class ClfSet():
         best_GBC = grid_search_model.best_estimator_
         best_GBC.fit(self.X_train, self.y_train)
         y_pred_prob = best_GBC.predict_proba(self.X_test)
-        fpr, tpr, threholds = roc_curve(self.y_test, y_pred_prob[:, 1])
-        print(auc(fpr, tpr))
-        
-        # y_pred_prob = GBC.predict_proba(self.X_test)
+        print(y_pred_prob)
         # fpr, tpr, threholds = roc_curve(self.y_test, y_pred_prob[:, 1])
-        # return auc(fpr, tpr)
+        # print(auc(fpr, tpr))
 
     def RFC(self):
         RFC = RandomForestClassifier()
@@ -115,4 +112,4 @@ if __name__ == '__main__':
     # clfAuc = RunClf(abundanceTransFiles, labelsTransSer, 'Stage III', 'Stage IV')
     # resultDf = resultDf.append({'Data': 'transcriptome', 'Stage': 'Stage III vs Stage IV', 'RFC AUROC': clfAuc[0], 'GBC AUROC': clfAuc[1]}, ignore_index=True)
     # print('Done')
-    # resultDf.to_csv('COAD_classfication_result.csv', index=0)
+    # resultDf.to_csv('COAD_classfication_result.csv', index=0)]
